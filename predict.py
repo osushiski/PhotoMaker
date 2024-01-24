@@ -232,7 +232,7 @@ class Predictor(BasePredictor):
             "cuda"
         )
         np_image = [np.array(val) for val in image]
-        image, has_nsfw_concept = self.safety_checker(
+        image, false = self.safety_checker(
             images=np_image,
             clip_input=safety_checker_input.pixel_values.to(torch.float16),
         )
